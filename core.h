@@ -64,4 +64,11 @@ typedef bool Bool;
 
 #define MAX_U32 4294967296
 
+U64 read_cpu_timer();
+void prefix_sum_blelloch(S32 *input, S32 *output, S64 count);
+void prefix_sum_blelloch_multithreaded(S32 *input, S32 *output, S64 count,
+                                       int num_threads);
+void prefix_sum_vector(S32 *input, S32 *output);
+void prefix_sum_2pass(S32 *input, S32 *output, S64 count);
+
 #endif // CORE_H

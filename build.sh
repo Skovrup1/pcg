@@ -3,14 +3,14 @@
 # exit immediately if a command exits with a non-zero status
 set -e
 
-SRC_FILE="main.c"
+SRC_FILES="main.c"
 OUTPUT_EXE="main"
 CC="gcc"
-FLAGS="-Wall -Wextra -std=c11"
-PERF_FLAGS="-O1 -march=x86-64-v3 -g"
+FLAGS="-Wall -Wextra -std=c11 -lm -pthread"
+PERF_FLAGS="-O3 -march=native"
 
 build() {
-    $CC $SRC_FILE $FLAGS $PERF_FLAGS -o $OUTPUT_EXE
+    $CC $SRC_FILES $FLAGS $PERF_FLAGS -o $OUTPUT_EXE
     chmod +x $OUTPUT_EXE
 }
 
